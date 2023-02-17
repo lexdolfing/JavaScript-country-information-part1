@@ -1,0 +1,60 @@
+@import "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
+* {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  flex-direction: column;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  font-family: Pacifico, cursive;
+}
+
+.Asia {
+  color: red;
+}
+
+.Americas {
+  color: green;
+}
+
+.Africa {
+  color: #00f;
+}
+
+.Oceania {
+  color: purple;
+}
+
+.Europe {
+  color: #ff0;
+}
+
+.flag-image {
+  width: 40px;
+}
+
+ul {
+  columns: 3;
+  width: calc(100vw - 60px);
+  background-color: #f0f0f0;
+  margin: 30px;
+  padding: 15px;
+  list-style-type: none;
+}
+
+li {
+  font-size: 20px;
+}
+
+ul p {
+  font-size: 13px;
+}
+
+/*# sourceMappingURL=index.4d663569.css.map */
