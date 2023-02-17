@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/*CSS Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+
+.Asia {
+    color: red;
+}
+
+.Americas {
+    color: green;
+}
+
+.Africa {
+    color: blue;
+}
+
+.Oceania {
+    color: purple;
+}
+
+.Europe {
+    color: yellow;
+}
+
+.flag-image {
+    width: 40px;
+}
+
+ul {
+    background-color: #f0f0f0;
+    columns: 3;
+    list-style-type: none;
+    padding: 15px;
+    margin: 30px;
+    width: calc(100vw - 60px);
+}
+
+li {
+    font-size: 20px;
+}
+
+ul p {
+    font-size: 13px;
+}
