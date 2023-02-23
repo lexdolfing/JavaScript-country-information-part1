@@ -41,8 +41,8 @@ h1 {
 }
 
 ul {
-  columns: 3;
   width: calc(100vw - 60px);
+  columns: 3;
   background-color: #f0f0f0;
   margin: 30px;
   padding: 15px;
@@ -50,11 +50,39 @@ ul {
 }
 
 li {
+  width: 30%;
   font-size: 20px;
 }
 
 ul p {
   font-size: 13px;
+}
+
+#earth_bulb {
+  width: 300px;
+}
+
+.content-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.search_country_form {
+  width: 320px;
+  flex-direction: row;
+  display: flex;
+}
+
+#text-field {
+  border-radius: 40px 0 0 40px;
+}
+
+.search_country_button {
+  width: 30%;
+  background-color: #90ee90;
+  border-radius: 0 40px 40px 0;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
