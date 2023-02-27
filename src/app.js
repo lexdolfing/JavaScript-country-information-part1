@@ -38,15 +38,66 @@ async function fetchOneCountry(country) {
         const url = "https://restcountries.com/v2/name/" + country
         console.log(url)
         // doe een get request met die url
-        const thisCountry = await axios.get(url);
-        console.log(thisCountry.data[0].name);
+        let thisCountry = await axios.get(url);
+        //haal de nodige info op, zet in variabele
+        thisCountry = thisCountry.data[0];
+        // Maak een array waarin alle html-elementen zitten die geprint moeten worden naar de webpagina
+        const displaySelectedCountry = `<article id="country_information"><span class="country_information_header"><img src=${thisCountry.flag} alt="country flag" class="chosen-country_flag"/> ${thisCountry.name} </span>
+            <p class="country_information_text">${thisCountry.name} is situated in ${thisCountry.subregion}. It has a population of ${thisCountry.population} people. </br>
+            The capital is ${thisCountry.capital} and you can pay with ${getValuta(thisCountry)}. </br>
+            They speak ${getLanguages(thisCountry)}</p></article>`
+        console.log(displaySelectedCountry);
+
+        //Hier print ik het op de pagina met een innerHTML
+        const countryTextBox = document.getElementById("country_information_container");
+        countryTextBox.innerHTML = displaySelectedCountry;
     } catch (e) {
-        console.error(e);
+        const countryTextBox = document.getElementById("country_information_container");
+        countryTextBox.innerHTML = "Dit land bestaat niet, controleer je invoer";
 
     }
 }
 
-console.log(fetchOneCountry("Afghanistan"))
+function getValuta (thisCountry) {
+        // map, maak een array met alle valuta
+        const currencies = thisCountry.currencies.map((currency) => {
+            return currency.name;
+        });
+        return currencies.join(" and the ");
+}
+
+function getLanguages (thisCountry) {
+    // maak een array met alle talen die gesproken worden in het opgegeven land
+    let languages = thisCountry.languages.map((language) => {
+        return language.name;
+    })
+    // Als er meer dan twee talen gesproken worden, maak een string waar de laatste twee elementen gescheiden worden door "and" en de voorgaande door een komma
+    if (languages.length > 2) {
+        // maak een array met de laatste twee talen
+        const lastTwoLanguages = languages.slice(-2);
+        // maak een array met de voorgaande talen
+        const precedingLanguages = languages.slice(0, -2);
+        // join deze arrays
+        return `${precedingLanguages.join(", ")}, ${lastTwoLanguages.join(" and ")}`
+
+    } else {
+        return languages.join(" and ");
+    }
+}
+
+//Event listener
+
+// sla referentie naar het button element op
+const searchForm = document.getElementById("search_country_form");
+
+// plaats er een eventlistener op
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const countryInputField = document.getElementById('text-field')
+    const countryInput = countryInputField.value;
+    fetchOneCountry(countryInput);
+    countryInputField.value= '';
+    });
 
 
 
