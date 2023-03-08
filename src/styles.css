@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/*CSS Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+
+.Asia {
+    color: red;
+}
+
+.Americas {
+    color: green;
+}
+
+.Africa {
+    color: blue;
+}
+
+.Oceania {
+    color: purple;
+}
+
+.Europe {
+    color: yellow;
+}
+
+.flag-image {
+    width: 40px;
+}
+
+ul {
+    background-color: #f0f0f0;
+    list-style-type: none;
+    padding: 15px;
+    margin: 30px;
+    width: calc(100vw - 60px);
+    columns: 3;
+}
+
+li {
+    font-size: 20px;
+    width: 30%;
+}
+
+ul p {
+    font-size: 13px;
+}
+
+#earth_bulb {
+    width: 300px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#search_country_form {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: 2em;
+}
+
+#text-field {
+    border-radius: 10px 0 0 10px;
+}
+
+#search_country_button {
+    background-color: lightgreen;
+    width: 30%;
+    border-radius: 0 10px 10px 0;
+}
+
+#country_information_container {
+    display: flex;
+    justify-content: center;
+}
+
+#country_information {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 20px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px lightgrey;
+}
+
+.chosen-country_flag {
+    width: 40px;
+}
+
+.country_information_header {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+.country_information_text {
+    border-top: 2px solid lightgray;
+    padding: 10px;
+}
